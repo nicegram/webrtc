@@ -179,7 +179,7 @@ static const NSInteger kMaxInflightBuffers = 1;
 #if defined(__IPHONE_11_0) && defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && \
     (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0)
     if (@available(iOS 11, *)) {
-      [rotationOverride getValue:&rotation size:sizeof(rotation)];
+      [rotationOverride getValue:&rotation];
     } else
 #endif
     {
