@@ -76,7 +76,7 @@ void AudioDeviceGeneric::StartNicegramRecording() {
     RTC_LOG_F(LS_ERROR) << "Not supported on this platform";
 }
 
-void AudioDeviceGeneric::StopNicegramRecording() {
+void AudioDeviceGeneric::StopNicegramRecording(const std::function<void(const std::string& outputFilePath)>& callback) {
     RTC_LOG_F(LS_ERROR) << "Not supported on this platform";
 }
 //

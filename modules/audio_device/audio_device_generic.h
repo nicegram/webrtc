@@ -139,7 +139,7 @@ class AudioDeviceGeneric {
   virtual void InitNicegramCallRecording(const std::string& outputFolderPath);
   virtual void SetRecordOutputFolder(const std::string& path);
   virtual void StartNicegramRecording();
-  virtual void StopNicegramRecording();
+  virtual void StopNicegramRecording(const std::function<void(const std::string& outputFilePath)>& callback);
   //
     
   virtual void AttachAudioBuffer(AudioDeviceBuffer* audioBuffer) = 0;
