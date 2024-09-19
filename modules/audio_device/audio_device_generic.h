@@ -141,8 +141,7 @@ class AudioDeviceGeneric {
 #endif  // WEBRTC_IOS
 
   // MARK: Nicegram NCG-5828 call recording
-  virtual void InitNicegramCallRecording(const std::string& outputFolderPath);
-  virtual void SetRecordOutputFolder(const std::string& path);
+  virtual void InitNicegramCallRecording();
   virtual void StartNicegramRecording();
   virtual void StopNicegramRecording(const CompletionRecorderCallback& callback);
   //

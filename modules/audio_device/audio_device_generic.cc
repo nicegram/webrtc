@@ -64,11 +64,7 @@ int AudioDeviceGeneric::GetRecordAudioParameters(
 #endif  // WEBRTC_IOS
 
 // MARK: Nicegram NCG-5828 call recording
-void AudioDeviceGeneric::InitNicegramCallRecording(const std::string& outputFolderPath) {
-    RTC_LOG_F(LS_ERROR) << "Not supported on this platform";
-}
-
-void AudioDeviceGeneric::SetRecordOutputFolder(const std::string& path) {
+void AudioDeviceGeneric::InitNicegramCallRecording() {
     RTC_LOG_F(LS_ERROR) << "Not supported on this platform";
 }
 
