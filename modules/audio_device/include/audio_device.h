@@ -26,7 +26,7 @@ class AudioDeviceModule : public webrtc::RefCountInterface {
   // MARK: Nicegram NCG-5828 call recording
   using CompletionRecorderCallback = std::function<void(const std::string& outputFilePath,
                                                         double durationInSeconds,
-                                                        std::vector<uint8_t> rawData)>;
+                                                        size_t rawDataSize)>;
   //
   enum AudioLayer {
     kPlatformDefaultAudio = 0,
