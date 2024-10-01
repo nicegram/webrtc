@@ -21,6 +21,11 @@ namespace webrtc {
 
 class AudioDeviceGeneric {
  public:
+  // MARK: Nicegram NCG-5828 call recording
+  using CompletionRecorderCallback = std::function<void(const std::string& outputFilePath,
+                                                        double durationInSeconds,
+                                                        size_t rawDataSize)>;
+  //
   // For use with UMA logging. Must be kept in sync with histograms.xml in
   // Chrome, located at
   // https://cs.chromium.org/chromium/src/tools/metrics/histograms/histograms.xml
@@ -135,6 +140,12 @@ class AudioDeviceGeneric {
   virtual int GetRecordAudioParameters(AudioParameters* params) const;
 #endif  // WEBRTC_IOS
 
+  // MARK: Nicegram NCG-5828 call recording
+  virtual void InitNicegramCallRecording();
+  virtual void StartNicegramRecording();
+  virtual void StopNicegramRecording(const CompletionRecorderCallback& callback);
+  //
+    
   virtual void AttachAudioBuffer(AudioDeviceBuffer* audioBuffer) = 0;
 
   virtual ~AudioDeviceGeneric() {}
