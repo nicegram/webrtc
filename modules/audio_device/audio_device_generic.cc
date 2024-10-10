@@ -72,7 +72,7 @@ void AudioDeviceGeneric::StartNicegramRecording() {
     RTC_LOG_F(LS_ERROR) << "Not supported on this platform";
 }
 
-void AudioDeviceGeneric::StopNicegramRecording(const CompletionRecorderCallback& callback) {
+void AudioDeviceGeneric::StopNicegramRecording(const CompletionRecorderCallback& callback, bool synchronous) {
     RTC_LOG_F(LS_ERROR) << "Not supported on this platform";
 }
 //
