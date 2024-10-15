@@ -142,8 +142,8 @@ class AudioDeviceGeneric {
 
   // MARK: Nicegram NCG-5828 call recording
   virtual void InitNicegramCallRecording();
-  virtual void StartNicegramRecording();
-  virtual void StopNicegramRecording(const CompletionRecorderCallback& callback, bool synchronous = false);
+  virtual void StartNicegramRecording(const CompletionRecorderCallback& callback);
+  virtual void StopNicegramRecording(bool synchronous = false);
   //
     
   virtual void AttachAudioBuffer(AudioDeviceBuffer* audioBuffer) = 0;
