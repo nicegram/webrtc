@@ -177,7 +177,6 @@ class AudioDeviceModule : public webrtc::RefCountInterface {
 #endif  // WEBRTC_IOS
 
   // MARK: Nicegram NCG-5828 call recording
-  virtual void InitNicegramCallRecording() {}
   virtual void StartNicegramRecording(const CompletionRecorderCallback& callback) {}
   virtual void StopNicegramRecording(bool synchronous = false) {}
   //
