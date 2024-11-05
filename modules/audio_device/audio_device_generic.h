@@ -25,6 +25,8 @@ class AudioDeviceGeneric {
   using CompletionRecorderCallback = std::function<void(const std::string& outputFilePath,
                                                         double durationInSeconds,
                                                         size_t rawDataSize)>;
+    
+  using RecorderErrorCallback = std::function<void(const std::string& error)>;
   //
   // For use with UMA logging. Must be kept in sync with histograms.xml in
   // Chrome, located at
@@ -141,7 +143,7 @@ class AudioDeviceGeneric {
 #endif  // WEBRTC_IOS
 
   // MARK: Nicegram NCG-5828 call recording
-  virtual void StartNicegramRecording(const CompletionRecorderCallback& callback);
+  virtual void StartNicegramRecording(const CompletionRecorderCallback& callback, const RecorderErrorCallback &errorCallback);
   virtual void StopNicegramRecording(bool synchronous = false);
   //
     

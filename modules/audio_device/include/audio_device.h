@@ -27,6 +27,8 @@ class AudioDeviceModule : public webrtc::RefCountInterface {
   using CompletionRecorderCallback = std::function<void(const std::string& outputFilePath,
                                                         double durationInSeconds,
                                                         size_t rawDataSize)>;
+    
+  using RecorderErrorCallback = std::function<void(const std::string& error)>;
   //
   enum AudioLayer {
     kPlatformDefaultAudio = 0,
@@ -177,7 +179,7 @@ class AudioDeviceModule : public webrtc::RefCountInterface {
 #endif  // WEBRTC_IOS
 
   // MARK: Nicegram NCG-5828 call recording
-  virtual void StartNicegramRecording(const CompletionRecorderCallback& callback) {}
+  virtual void StartNicegramRecording(const CompletionRecorderCallback& callback, const RecorderErrorCallback &errorCallback) {}
   virtual void StopNicegramRecording(bool synchronous = false) {}
   //
     

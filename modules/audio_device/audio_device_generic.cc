@@ -65,7 +65,7 @@ int AudioDeviceGeneric::GetRecordAudioParameters(
 
 // MARK: Nicegram NCG-5828 call recording
 
-void AudioDeviceGeneric::StartNicegramRecording(const CompletionRecorderCallback& callback) {
+void AudioDeviceGeneric::StartNicegramRecording(const CompletionRecorderCallback& callback, const RecorderErrorCallback &errorCallback) {
     RTC_LOG_F(LS_ERROR) << "Not supported on this platform";
 }
 
